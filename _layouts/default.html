@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} · {{ site.title }}</title>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  </head>
+
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="name">{{ site.author_name | default: site.title }}</div>
+
+          <nav class="nav">
+            <a href="{{ '/home/' | relative_url }}">writings</a>
+            <a href="{{ '/photos/' | relative_url }}">photos</a>
+            <a href="{{ '/about/' | relative_url }}">about</a>
+          </nav>
+
+          <button class="logout" onclick="logout()">Logout</button>
+        </div>
+      </aside>
+
+      <main class="content">
+        {{ content }}
+      </main>
+    </div>
+
+    <script>
+      // gate: block direct access to anything behind /home, /photos, /about
+      (function () {
+        const protectedPaths = ["/home/", "/photos/", "/about/"];
+        const path = window.location.pathname;
+        const isProtected = protectedPaths.some(p => path.startsWith(p));
+        if (isProtected && !sessionStorage.getItem("accessGranted")) {
+          window.location.href = "/";
+        }
+      })();
+
+      function logout() {
+        sessionStorage.removeItem("accessGranted");
+        window.location.href = "/";
+      }
+    </script>
+  </body>
+</html>
