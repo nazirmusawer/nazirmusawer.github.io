@@ -3,17 +3,22 @@ layout: home
 permalink: /home/
 ---
 
-<script>
-  if (!sessionStorage.getItem("accessGranted")) {
-    window.location.href = "/";
-  }
+---
+layout: default
+title: Writings
+permalink: /home/
+---
 
-  function logout() {
-    sessionStorage.removeItem("accessGranted");
-    window.location.href = "/";
-  }
-</script>
+<div class="center">
+  <h2>Posts</h2>
 
-<button onclick="logout()" style="margin-bottom:20px;">
-  Logout
-</button>
+  <ul>
+    {% for post in site.posts %}
+      <li>
+        <small>{{ post.date | date: "%b %d, %Y" }}</small><br>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </li>
+      <br>
+    {% endfor %}
+  </ul>
+</div>
