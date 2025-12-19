@@ -1,18 +1,9 @@
 ---
 layout: default
-title: Writings
+title: Home
 permalink: /home/
 ---
 
 <div class="center">
-  <h2>Posts</h2>
-
-  <ul class="postlist">
-    {% for post in site.posts %}
-      <li>
-        <div class="date">{{ post.date | date: "%b %d, %Y" }}</div>
-        <a class="plink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
+  <img src="/assets/images/home.jpg" alt="Home" class="hero-img" />
 </div>
