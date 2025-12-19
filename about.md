@@ -4,7 +4,8 @@ title: About
 permalink: /about/
 ---
 I'm Nazir Musawer... This is a private space for my writing-journals, memories, and small reflections.
-I keep it simple on purpopse. You can find me on X: @NazirMusawer
+I keep it simple on purpopse. You can find me on X: [@nazirmusawer](https://x.com/nazirmusawer)
+
 
 ## Why I made this
 To write without noise.
