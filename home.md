@@ -5,5 +5,5 @@ permalink: /home/
 ---
 
 <div class="center">
-  <img src="/assets/images/home.jpg" alt="Home" class="hero-img" />
+  <img src="/assets/images/pine-tree.jpg" alt="Home" class="hero-img" />
 </div>
