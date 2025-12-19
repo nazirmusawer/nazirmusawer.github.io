@@ -7,6 +7,6 @@ permalink: /home/
 <div class="center">
   <img src="/assets/images/pine-tree.jpg" alt="Home" class="hero-img" />
   <div class="home-caption">
-    December light, quiet hours.
+        Books.Cats.People.
   </div>
 </div>
