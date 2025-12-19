@@ -1,0 +1,3 @@
+a[href*="rss"], a[href*="feed"], .rss-subscribe {
+  display: none !important;
+}
