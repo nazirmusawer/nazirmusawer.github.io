@@ -114,12 +114,12 @@ pre, code {
 }
 /* Move sidebar links slightly to the right under the name */
 .sidebar .nav {
-  margin-left: 12px;   /* change to 8px / 16px if you want */
+  margin-left: 18px;   /* change to 8px / 16px if you want */
 }
 
 /* Optional: also indent the logout button the same amount */
 .sidebar .logout {
-  margin-left: 12px;
+  margin-left: 18px;
 }
 /* Short divider aligned with nav + logout */
 .sidebar::after {
