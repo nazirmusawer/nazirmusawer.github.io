@@ -1,0 +1,11 @@
+---
+---
+
+@import "minima";
+
+/* Hide RSS link on the homepage */
+.rss-subscribe,
+a[href*="feed.xml"],
+a[href*="rss"] {
+  display: none !important;
+}
