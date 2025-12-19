@@ -127,8 +127,8 @@ pre, code {
   content: "";
   position: absolute;
   right: 0;
-  top: 155px;      /* adjust up/down */
-  height: 155px;   /* adjust length */
+  top: 110px;      /* adjust up/down */
+  height: 340px;   /* adjust length */
   width: 1px;
   background: var(--line);
 }
