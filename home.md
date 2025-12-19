@@ -1,9 +1,4 @@
 ---
-layout: home
-permalink: /home/
----
-
----
 layout: default
 title: Writings
 permalink: /home/
@@ -12,13 +7,12 @@ permalink: /home/
 <div class="center">
   <h2>Posts</h2>
 
-  <ul>
+  <ul class="postlist">
     {% for post in site.posts %}
       <li>
-        <small>{{ post.date | date: "%b %d, %Y" }}</small><br>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <div class="date">{{ post.date | date: "%b %d, %Y" }}</div>
+        <a class="plink" href="{{ post.url | relative_url }}">{{ post.title }}</a>
       </li>
-      <br>
     {% endfor %}
   </ul>
 </div>
