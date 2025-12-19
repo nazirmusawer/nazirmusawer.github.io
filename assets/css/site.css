@@ -97,4 +97,20 @@ body {
   border: 1px solid var(--line);
 }
 
+/* Prevent horizontal scrolling caused by long words/links */
+.content, .post {
+  min-width: 0;
+}
+
+.post {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+pre, code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+
 
