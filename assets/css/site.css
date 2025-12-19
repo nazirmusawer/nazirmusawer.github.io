@@ -112,5 +112,25 @@ pre, code {
   word-break: break-word;
   max-width: 100%;
 }
+/* Move sidebar links slightly to the right under the name */
+.sidebar .nav {
+  margin-left: 12px;   /* change to 8px / 16px if you want */
+}
+
+/* Optional: also indent the logout button the same amount */
+.sidebar .logout {
+  margin-left: 12px;
+}
+/* Short divider aligned with nav + logout */
+.sidebar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 105px;      /* adjust up/down */
+  height: 155px;   /* adjust length */
+  width: 1px;
+  background: var(--line);
+}
+
 
 
