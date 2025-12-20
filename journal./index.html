@@ -1,0 +1,24 @@
+---
+layout: default
+title: Posts
+permalink: /journal/
+---
+
+<div class="center">
+  <h1>Posts</h1>
+
+  {% assign grouped = site.posts | sort: "date" | reverse
+    | group_by_exp:"post","post.date | date: '%B %Y'" %}
+
+  {% for group in grouped %}
+    <h2 class="journal-month">{{ group.name }}</h2>
+    <ul class="journal-list">
+      {% for post in group.items %}
+        <li class="journal-item">
+          <a class="journal-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <span class="journal-date">{{ post.date | date: "%b %d" }}</span>
+        </li>
+      {% endfor %}
+    </ul>
+  {% endfor %}
+</div>
