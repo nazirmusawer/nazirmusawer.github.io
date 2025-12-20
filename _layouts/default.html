@@ -1,16 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ page.title }} · {{ site.title }}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ page.title }} · {{ site.title }}</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
-</head>
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
+  </head>
 
   <body>
     <div class="layout">
@@ -18,17 +19,15 @@
         <div class="brand">
           <div class="name">
             <a href="{{ '/home/' | relative_url }}">
-            {{ site.author_name | default: site.title }}
+              {{ site.author_name | default: site.title }}
             </a>
-            </div>
-
+          </div>
 
           <nav class="nav">
-            <a href="{{ '/home/' | relative_url }}">writings</a>
-            <a href="/journal/">journal</a>
-            <a href="/books/">books</a>
+            <a href="{{ '/journal/' | relative_url }}">journal</a>
+            <a href="{{ '/books/' | relative_url }}">books</a>
             <a href="{{ '/photos/' | relative_url }}">photos</a>
-            <a href="/links/">links</a>
+            <a href="{{ '/links/' | relative_url }}">links</a>
             <a href="{{ '/about/' | relative_url }}">about</a>
           </nav>
 
@@ -44,11 +43,12 @@
     </div>
 
     <script>
-      // gate: block direct access to anything behind /home, /photos, /about
+      // Gate: block direct access to private sections unless password granted
       (function () {
-        const protectedPaths = ["/home/", "/photos/", "/about/"];
+        const protectedPaths = ["/home/", "/journal/", "/books/", "/links/", "/photos/", "/about/"];
         const path = window.location.pathname;
         const isProtected = protectedPaths.some(p => path.startsWith(p));
+
         if (isProtected && !sessionStorage.getItem("accessGranted")) {
           window.location.href = "/";
         }
