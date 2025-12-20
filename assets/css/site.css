@@ -170,3 +170,13 @@ pre, code {
   word-break: break-word;
   max-width: 100%;
 }
+/* Sidebar name: never underline */
+.name a,
+.name a:hover,
+.name a:focus,
+.name a:active,
+.name a:visited {
+  text-decoration: none !important;
+  color: inherit;
+}
+
