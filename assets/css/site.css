@@ -332,3 +332,70 @@ pre, code {
   font-weight: 500;
   letter-spacing: 0.01em;
 }
+/* Books page */
+.muted { color: var(--muted); }
+
+.books{
+  margin-top: 26px;
+  max-width: 760px;
+}
+
+.book{
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 18px;
+  padding: 18px 0;
+  align-items: start;
+}
+
+.book-cover{
+  width: 110px;
+  height: auto;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  display: block;
+}
+
+.book-title{
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 600;
+  color: #8ab4f8;     /* same vibe as your links */
+  text-decoration: none;
+  line-height: 1.25;
+}
+
+.book-title:hover{
+  text-decoration: none;
+  color: #b9d4ff;
+}
+
+.book-author{
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.book-text{
+  margin-top: 14px;
+  color: var(--text);
+  opacity: 0.92;
+  line-height: 1.75;
+}
+
+.book-divider{
+  border: 0;
+  border-top: 1px solid var(--line);
+  margin: 18px 0;
+  opacity: 0.9;
+}
+
+/* Mobile: stack cover on top */
+@media (max-width: 720px){
+  .book{
+    grid-template-columns: 1fr;
+  }
+  .book-cover{
+    width: 140px;
+  }
+}
