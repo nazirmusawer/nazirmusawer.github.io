@@ -1,63 +1,37 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{{ page.title }} · {{ site.title }}</title>
+---
+layout: default
+title: Books
+permalink: /books/
+---
 
-    <!-- Inter font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<section class="books">
+  <h1>Books</h1>
+  <p class="books-intro">
+    Below is a list of books that have made a deep and lasting impact on me.
+    As the adage goes, “your thoughts become your destiny” and these books have influenced my thoughts.
+  </p>
 
-    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}" />
-  </head>
-
-  <body>
-    <div class="layout">
-      <aside class="sidebar">
-        <div class="brand">
-          <div class="name">
-            <a href="{{ '/home/' | relative_url }}">
-              {{ site.author_name | default: site.title }}
-            </a>
-          </div>
-
-          <nav class="nav">
-            <a href="{{ '/journal/' | relative_url }}">journal</a>
-            <a href="{{ '/books/' | relative_url }}">books</a>
-            <a href="{{ '/photos/' | relative_url }}">photos</a>
-            <a href="{{ '/links/' | relative_url }}">links</a>
-            <a href="{{ '/about/' | relative_url }}">about</a>
-          </nav>
-
-          <button class="logout" onclick="logout()">Logout</button>
-        </div>
-      </aside>
-
-      <main class="content">
-        <article class="post">
-          {{ content }}
-        </article>
-      </main>
+  <article class="book">
+    <img src="{{ '/assets/images/books/the-first-and-last-freedom.jpg' | relative_url }}" alt="The First and Last Freedom cover">
+    <div class="book-content">
+      <h2>The First and Last Freedom</h2>
+      <h3>Jiddu Krishnamurti</h3>
+      <p>
+        About 1/4 of the way into this book I was really wondering if I could make it through what seemed like ramblings;
+        a guru with more style than substance. But later I began to see how deeply he dissects the mind.
+      </p>
     </div>
+  </article>
 
-    <script>
-      // Gate: block direct access to private sections unless password granted
-      (function () {
-        const protectedPaths = ["/home/", "/journal/", "/books/", "/links/", "/photos/", "/about/"];
-        const path = window.location.pathname;
-        const isProtected = protectedPaths.some(p => path.startsWith(p));
-
-        if (isProtected && !sessionStorage.getItem("accessGranted")) {
-          window.location.href = "/";
-        }
-      })();
-
-      function logout() {
-        sessionStorage.removeItem("accessGranted");
-        window.location.href = "/";
-      }
-    </script>
-  </body>
-</html>
+  <article class="book">
+    <img src="{{ '/assets/images/books/the-road-to-serfdom.jpg' | relative_url }}" alt="The Road to Serfdom cover">
+    <div class="book-content">
+      <h2>The Road to Serfdom</h2>
+      <h3>F. A. Hayek</h3>
+      <p>
+        This is a towering work. Though I only recently read it, it aligned with thoughts I had years ago about power,
+        control, and how “good intentions” can still build cages.
+      </p>
+    </div>
+  </article>
+</section>
