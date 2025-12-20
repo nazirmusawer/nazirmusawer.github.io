@@ -3,7 +3,7 @@ layout: default
 title: About
 permalink: /about/
 ---
-I'm Nazir Musawer... This is a private space for my writing-journals, memories, and small reflections.
+This is a private space for my writing-journals, memories, and small reflections.
 I keep it simple on purpopse. You can find me on X: [@nazirmusawer](https://x.com/nazirmusawer)
 
 
