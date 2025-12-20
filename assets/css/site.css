@@ -182,3 +182,47 @@ pre, code {
   color: inherit;
 }
 
+/* Mobile fixes */
+@media (max-width: 720px) {
+
+  /* Stack sidebar above content */
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  /* Sidebar spacing */
+  .sidebar {
+    padding: 22px;
+  }
+
+  /* Remove the vertical divider line on mobile */
+  .sidebar::after {
+    display: none;
+  }
+
+  /* Remove indents on mobile (keeps it clean) */
+  .sidebar .nav,
+  .sidebar .logout {
+    margin-left: 0;
+  }
+
+  /* Make content padding smaller */
+  .content {
+    padding: 18px 18px 48px;
+  }
+
+  /* Let containers use full width */
+  .center,
+  .post {
+    max-width: 100%;
+  }
+
+  /* Images: always fit the phone */
+  .hero-img,
+  .post img,
+  .post-content img,
+  .content img {
+    max-width: 100%;
+    height: auto;
+  }
+}
