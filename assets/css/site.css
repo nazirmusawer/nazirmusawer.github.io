@@ -276,3 +276,41 @@ pre, code {
   color: var(--muted);
   text-decoration: none;
 }
+/* Journal index — cleaner */
+.journal-month{
+  margin: 2.25rem 0 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.journal-list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.02);
+}
+
+.journal-item{
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.journal-item:last-child{
+  border-bottom: 0;
+}
+
+.journal-date{
+  color: var(--muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  opacity: 0.8;
+}
