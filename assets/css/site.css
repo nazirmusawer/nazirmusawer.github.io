@@ -138,4 +138,12 @@ pre, code {
   margin-bottom: 24px;
 }
 
+.name a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.name a:hover {
+  text-decoration: underline;
+}
 
