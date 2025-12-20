@@ -172,7 +172,9 @@ pre, code {
 }
 /* Sidebar name: never underline */
 .name a,
-.name a:hover,
+.name a:hover {
+  opacity: 0.85;
+}
 .name a:focus,
 .name a:active,
 .name a:visited {
