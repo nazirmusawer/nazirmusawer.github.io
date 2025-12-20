@@ -314,3 +314,21 @@ pre, code {
   white-space: nowrap;
   opacity: 0.8;
 }
+/* Journal: make rows feel like buttons (clean, subtle) */
+.journal-item {
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+.journal-item:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+.journal-item:active {
+  transform: translateY(1px);
+}
+
+/* Make the title a bit stronger */
+.journal-link {
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
