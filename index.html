@@ -1,24 +1,62 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Private Journal</title>
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+
+<body>
+  <main class="content">
+    <div class="center" style="text-align:center; padding-top: 80px;">
+      <h1 style="margin-bottom: 6px;">Private Journal</h1>
+      <p style="color: var(--muted); margin-top: 0;">This site is password protected.</p>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter password"
+        style="
+          width: min(360px, 92%);
+          padding: 10px 12px;
+          border: 1px solid var(--line);
+          background: transparent;
+          color: var(--text);
+          border-radius: 8px;
+          outline: none;
+          margin-top: 14px;
+        "
+      />
+
+      <div style="margin-top: 14px;">
+        <button
+          class="logout"
+          style="margin-left: 0;"
+          id="enterBtn"
+        >
+          Enter
+        </button>
+      </div>
+    </div>
+  </main>
+
   <script>
     function checkPassword() {
-      var password = document.getElementById("password").value;
-      if (password === "naseerartin$") {
+      const password = document.getElementById("password").value;
+      // CHANGE THIS PASSWORD NOW
+      if (password === "CHANGE_ME") {
         sessionStorage.setItem("accessGranted", "true");
         window.location.href = "/home/";
       } else {
         alert("Wrong password");
       }
     }
+
+    document.getElementById("enterBtn").addEventListener("click", checkPassword);
+    document.getElementById("password").addEventListener("keydown", (e) => {
+      if (e.key === "Enter") checkPassword();
+    });
   </script>
-</head>
-<body style="font-family: sans-serif; text-align: center; margin-top: 100px;">
-  <h2>Private Journal</h2>
-  <p>This site is password protected.</p>
-  <input type="password" id="password" placeholder="Enter password">
-  <br><br>
-  <button onclick="checkPassword()">Enter</button>
 </body>
 </html>
