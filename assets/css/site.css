@@ -1,140 +1,41 @@
-/* Dark minimalist layout similar to your example */
+/* Warm dark minimalist layout */
 :root {
-  --bg: #111;
-  --panel: #141414;
-  --text: #eaeaea;
-  --muted: #a8a8a8;
-  --line: #2a2a2a;
+  --bg: #141312;        /* warm charcoal */
+  --panel: #1a1918;     /* optional panel color */
+  --text: #e6e2dd;      /* warm off-white */
+  --muted: #b5afa6;     /* muted nav text */
+  --line: #2f2d2a;      /* subtle divider lines */
 }
 
 * { box-sizing: border-box; }
+
 body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
-
+/* Layout grid */
 .layout {
   display: grid;
   grid-template-columns: 220px minmax(0, 1fr);
   min-height: 100vh;
 }
 
+/* Sidebar */
 .sidebar {
   padding: 48px;
   position: relative;
+  background: var(--bg);
 }
 
 .name {
   font-size: 18px;
   margin-bottom: 14px;
-}
-
-.nav a {
-  display: block;
-  color: var(--muted);
-  text-decoration: none;
-  margin: 6px 0;
-}
-.nav a:hover { color: var(--text); }
-
-.logout {
-  margin-top: 18px;
-  background: transparent;
-  border: 1px solid var(--line);
-  color: var(--muted);
-  padding: 6px 10px;
-  cursor: pointer;
-}
-.logout:hover { color: var(--text); border-color: var(--muted); }
-
-.content {
-  padding: 28px 28px 60px;
-}
-
-.center {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-.hero-img {
-  width: 100%;
-  max-width: 760px;
-  display: block;
-  margin: 0 auto;
-  border: 1px solid var(--line);
-}
-
-.postlist { list-style: none; padding-left: 0; margin-top: 18px; }
-.postlist li { margin: 18px 0; }
-.date { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
-.plink { color: #8ab4f8; text-decoration: none; font-size: 20px; }
-.plink:hover { text-decoration: underline; }
-
-/* Journal post images */
-.post-content img,
-.content img {
-  max-width: 700px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 30px auto;
-  border: 1px solid var(--line);
-}
-/* Make journal posts readable */
-.post {
-  max-width: 760px;
-  margin: 0 auto;
-}
-
-/* Images inside posts: not too big */
-.post img {
-  max-width: 640px;
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 24px auto;
-  border: 1px solid var(--line);
-}
-
-/* Prevent horizontal scrolling caused by long words/links */
-.content, .post {
-  min-width: 0;
-}
-
-.post {
-  overflow-wrap: anywhere;
-  word-break: break-word;
-}
-
-pre, code {
-  white-space: pre-wrap;
-  word-break: break-word;
-  max-width: 100%;
-}
-/* Move sidebar links slightly to the right under the name */
-.sidebar .nav {
-  margin-left: 18px;   /* change to 8px / 16px if you want */
-}
-
-/* Optional: also indent the logout button the same amount */
-.sidebar .logout {
-  margin-left: 18px;
-}
-/* Short divider aligned with nav + logout */
-.sidebar::after {
-  content: "";
-  position: absolute;
-  right: 0;
-  top: 110px;      /* adjust up/down */
-  height: 340px;   /* adjust length */
-  width: 1px;
-  background: var(--line);
-}
-
-.post h1 {
-  margin-top: 0;
-  margin-bottom: 24px;
 }
 
 .name a {
@@ -146,3 +47,131 @@ pre, code {
   text-decoration: underline;
 }
 
+/* Move sidebar links slightly to the right under the name */
+.sidebar .nav {
+  margin-left: 18px;
+}
+
+.nav a {
+  display: block;
+  color: var(--muted);
+  text-decoration: none;
+  margin: 6px 0;
+}
+
+.nav a:hover {
+  color: var(--text);
+}
+
+/* Logout button */
+.logout {
+  margin-top: 18px;
+  margin-left: 18px; /* matches nav indent */
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.logout:hover {
+  color: var(--text);
+  border-color: var(--muted);
+}
+
+/* Short divider aligned with nav + logout */
+.sidebar::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 110px;     /* adjust up/down */
+  height: 340px;  /* adjust length */
+  width: 1px;
+  background: var(--line);
+}
+
+/* Main content */
+.content {
+  padding: 28px 28px 60px;
+  min-width: 0; /* prevents overflow */
+}
+
+/* Centered container (used on journal/home pages) */
+.center {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+/* Home hero image */
+.hero-img {
+  width: 100%;
+  max-width: 760px;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid var(--line);
+}
+
+/* Post list */
+.postlist {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 18px;
+}
+
+.postlist li {
+  margin: 18px 0;
+}
+
+.plink {
+  color: #8ab4f8;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+.plink:hover {
+  text-decoration: underline;
+}
+
+/* Post content */
+.post {
+  max-width: 760px;
+  margin: 0 auto;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.75; /* nicer reading */
+}
+
+.post h1 {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+/* Images inside posts (not too big) */
+.post img {
+  max-width: 640px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 24px auto;
+  border: 1px solid var(--line);
+}
+
+/* Any images that appear in content areas */
+.post-content img,
+.content img {
+  max-width: 700px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 30px auto;
+  border: 1px solid var(--line);
+}
+
+/* Code blocks: prevent horizontal scrolling */
+pre, code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
