@@ -264,3 +264,15 @@ pre, code {
   font-size: 0.9rem;
   white-space: nowrap;
 }
+/* Journal links: never blue, never underlined */
+.journal-link,
+.journal-link:visited,
+.journal-link:active {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.journal-link:hover {
+  color: var(--muted);
+  text-decoration: none;
+}
