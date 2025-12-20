@@ -33,19 +33,14 @@ body {
   background: var(--bg);
 }
 
-.name {
-  font-size: 18px;
-  margin-bottom: 14px;
-}
-
-.name a {
-  color: inherit;
+.name a,
+.name a:hover,
+.name a:visited,
+.name a:active {
   text-decoration: none;
+  color: inherit;
 }
 
-.name a:hover {
-  text-decoration: underline;
-}
 
 /* Move sidebar links slightly to the right under the name */
 .sidebar .nav {
